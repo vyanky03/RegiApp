@@ -218,29 +218,32 @@ class _RegFormState extends State<RegForm> {
               height: 20,
             ),
             SizedBox(
-              width: double.infinity,
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset('images/google.png'),
-                    FloatingActionButton.extended(
-                        onPressed: () {},
-                        backgroundColor: Color.fromARGB(255, 255, 255, 255),
-                        label: Text(
-                          'Login with Google',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                          ),
-                        )),
-                  ],
-                ),
-              ),
-            )
+                width: double.infinity,
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Image.asset(
+                    'images/google.png',
+                    height: 30,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    'Login with Google',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                  ),
+                ])),
           ],
         ),
       ),
     );
   }
 }
+                    // FloatingActionButton.extended(
+                    //     onPressed: () {},
+                    //     backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                    //     label: SizedBox(
+                    //       child: 
