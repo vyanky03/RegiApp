@@ -53,7 +53,7 @@ class _RegFormState extends State<RegForm> {
                     Padding(
                         padding: const EdgeInsets.only(bottom: 8.0),
                         child: SizedBox(
-                          width: 150,
+                          width: 178,
                           child: Text(
                             'First Name',
                             style: TextStyle(
@@ -83,7 +83,7 @@ class _RegFormState extends State<RegForm> {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
                       child: SizedBox(
-                        width: 150,
+                        width: 178,
                         child: Text(
                           'Last Name',
                           style: TextStyle(
@@ -215,16 +215,28 @@ class _RegFormState extends State<RegForm> {
                   )),
             ),
             SizedBox(
+              height: 20,
+            ),
+            SizedBox(
               width: double.infinity,
-              child: FloatingActionButton.extended(
-                  onPressed: () {},
-                  backgroundColor: Color.fromARGB(255, 255, 255, 255),
-                  label: Text(
-                    'Login with Google',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  )),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('images/google.png'),
+                    FloatingActionButton.extended(
+                        onPressed: () {},
+                        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                        label: Text(
+                          'Login with Google',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                          ),
+                        )),
+                  ],
+                ),
+              ),
             )
           ],
         ),
