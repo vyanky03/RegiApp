@@ -202,48 +202,25 @@ class _RegFormState extends State<RegForm> {
               ],
             ),
             SizedBox(
-              width: double.infinity,
-              child: FloatingActionButton.extended(
-                  onPressed: () {},
-                  backgroundColor: Color.fromARGB(255, 23, 120, 242),
-                  icon: Icon(Icons.facebook),
-                  label: Text(
-                    'Login with Facebook',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  )),
-            ),
-            SizedBox(
               height: 20,
             ),
-            SizedBox(
-                width: double.infinity,
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Image.asset(
-                    'images/google.png',
-                    height: 30,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Login with Google',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                    ),
-                  ),
-                ])),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image.asset(
+                'images/google.png',
+                height: 60,
+              ),
+              Image.asset(
+                'images/fb.png',
+                height: 60,
+              ),
+              Image.asset(
+                'images/twitter.png',
+                height: 60,
+              ),
+            ]),
           ],
         ),
       ),
     );
   }
 }
-                    // FloatingActionButton.extended(
-                    //     onPressed: () {},
-                    //     backgroundColor: Color.fromARGB(255, 255, 255, 255),
-                    //     label: SizedBox(
-                    //       child: 
