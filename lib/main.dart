@@ -22,7 +22,7 @@ class _RegFormState extends State<RegForm> {
       appBar: AppBar(
         leading: Icon(Icons.arrow_back_ios_new),
         backgroundColor: Color.fromARGB(255, 120, 85, 218),
-        title: Text('Register Here!',
+        title: Text('RegiApp',
             style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -33,8 +33,14 @@ class _RegFormState extends State<RegForm> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(10, 10, 10, 8),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              'Join us Here!',
+              style: TextStyle(fontSize: 38),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               children: [
                 Column(
@@ -52,7 +58,7 @@ class _RegFormState extends State<RegForm> {
                         )),
                     SizedBox(
                       width: 181,
-                      child: TextFormField(
+                      child: TextField(
                         textCapitalization: TextCapitalization.words,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -82,7 +88,7 @@ class _RegFormState extends State<RegForm> {
                     ),
                     SizedBox(
                       width: 181,
-                      child: TextFormField(
+                      child: TextField(
                         textCapitalization: TextCapitalization.words,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -136,7 +142,7 @@ class _RegFormState extends State<RegForm> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 25,
             ),
             SizedBox(
               width: double.infinity,
