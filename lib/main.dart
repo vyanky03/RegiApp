@@ -20,32 +20,21 @@ class _RegFormState extends State<RegForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "RegApp",
-          style: TextStyle(fontFamily: 'Exo2'),
-        ),
-        centerTitle: true,
+        leading: Icon(Icons.arrow_back_ios_new),
         backgroundColor: Color.fromARGB(255, 120, 85, 218),
+        title: Text('Register Here!',
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1,
+                fontFamily: 'Exo2')),
+        centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Text(
-                'Register Here!',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                  fontFamily: 'Exo2',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
             Row(
               children: [
                 Column(
@@ -66,11 +55,10 @@ class _RegFormState extends State<RegForm> {
                       child: TextFormField(
                         textCapitalization: TextCapitalization.words,
                         decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'Enter First Name',
-                            hintStyle: TextStyle(fontSize: 14),
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 15.0, horizontal: 10.0)),
+                          border: OutlineInputBorder(),
+                          hintText: 'Enter First Name',
+                          hintStyle: TextStyle(fontSize: 16),
+                        ),
                       ),
                     ),
                   ],
@@ -97,11 +85,10 @@ class _RegFormState extends State<RegForm> {
                       child: TextFormField(
                         textCapitalization: TextCapitalization.words,
                         decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'Enter Last Name',
-                            hintStyle: TextStyle(fontSize: 14),
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 15.0, horizontal: 10.0)),
+                          border: OutlineInputBorder(),
+                          hintText: 'Enter Last Name',
+                          hintStyle: TextStyle(fontSize: 16),
+                        ),
                       ),
                     ),
                   ],
@@ -109,7 +96,7 @@ class _RegFormState extends State<RegForm> {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 8.0),
@@ -123,14 +110,13 @@ class _RegFormState extends State<RegForm> {
             TextFormField(
               textCapitalization: TextCapitalization.words,
               decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter E-mail',
-                  hintStyle: TextStyle(fontSize: 14),
-                  contentPadding: const EdgeInsets.symmetric(
-                      vertical: 15.0, horizontal: 10.0)),
+                border: OutlineInputBorder(),
+                hintText: 'Enter E-mail',
+                hintStyle: TextStyle(fontSize: 16),
+              ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 8.0),
@@ -144,14 +130,13 @@ class _RegFormState extends State<RegForm> {
             TextFormField(
               textCapitalization: TextCapitalization.words,
               decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter Mobile Number',
-                  hintStyle: TextStyle(fontSize: 14),
-                  contentPadding: const EdgeInsets.symmetric(
-                      vertical: 15.0, horizontal: 10.0)),
+                border: OutlineInputBorder(),
+                hintText: 'Enter Mobile Number',
+                hintStyle: TextStyle(fontSize: 16),
+              ),
             ),
             SizedBox(
-              height: 10,
+              height: 30,
             ),
             SizedBox(
               width: double.infinity,
@@ -166,15 +151,18 @@ class _RegFormState extends State<RegForm> {
                   )),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Center(
                 child: Text(
-              'Already have an accont?',
+              'Already have an accont? Log in',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             )),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               children: [
                 Expanded(
@@ -188,7 +176,7 @@ class _RegFormState extends State<RegForm> {
                 )),
                 Text(
                   'or',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 18),
                 ),
                 Expanded(
                     child: Container(
@@ -207,15 +195,21 @@ class _RegFormState extends State<RegForm> {
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset(
                 'images/google.png',
-                height: 60,
+                height: 50,
+              ),
+              SizedBox(
+                width: 20,
               ),
               Image.asset(
                 'images/fb.png',
-                height: 60,
+                height: 50,
+              ),
+              SizedBox(
+                width: 20,
               ),
               Image.asset(
                 'images/twitter.png',
-                height: 60,
+                height: 50,
               ),
             ]),
           ],
