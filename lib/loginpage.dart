@@ -93,14 +93,16 @@ class _LoginPageState extends State<LoginPage> {
                   )),
             ),
             const SizedBox(height: 10),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Already have an accont?'),
-                Text(
-                  ' Sign Up',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+                const Text('Already have an accont?'),
+                TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Sign Up',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )),
               ],
             ),
           ],

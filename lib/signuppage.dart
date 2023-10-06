@@ -227,22 +227,25 @@ class _SignupPageState extends State<SignupPage> {
             const SizedBox(
               height: 10,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Already have an account? ',
                   style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
-                Text(
-                  'Login here',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Log in here',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
+                )
               ],
             ),
             const SizedBox(

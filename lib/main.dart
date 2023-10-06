@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 // import 'package:regiapp/welcomepage.dart';
-import 'package:regiapp/loginpage.dart';
-// import 'package:regiapp/signuppage.dart';
+// import 'package:regiapp/loginpage.dart';
+import 'package:regiapp/signuppage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -22,7 +22,7 @@ class _RegFormState extends State<RegForm> {
   @override
   Widget build(BuildContext context) {
     // return WelcomePage();
-    return LoginPage();
-    // return SignupPage();
+    // return LoginPage();
+    return SignupPage();
   }
 }
