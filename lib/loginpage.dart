@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,14 +39,17 @@ class _FirstPageState extends State<FirstPage> {
             const SizedBox(height: 10),
             const Text('Welcome back! Login with your credentials'),
             const SizedBox(height: 30),
-            const SizedBox(
-              width: double.infinity,
-              // height: 100,
-              child: Text(
-                'Email ID',
-                style: TextStyle(fontSize: 22),
-                textAlign: TextAlign.start,
-              ),
+            const Row(
+              children: [
+                SizedBox(
+                  height: 20,
+                  child: Text(
+                    'Email ID',
+                    style: TextStyle(fontSize: 20),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ],
             ),
             const Padding(padding: EdgeInsets.only(bottom: 10)),
             const TextField(
@@ -62,7 +65,7 @@ class _FirstPageState extends State<FirstPage> {
               width: double.infinity,
               child: Text(
                 'Password',
-                style: TextStyle(fontSize: 22),
+                style: TextStyle(fontSize: 20),
                 textAlign: TextAlign.start,
               ),
             ),
@@ -81,9 +84,9 @@ class _FirstPageState extends State<FirstPage> {
               width: double.infinity,
               child: FloatingActionButton.extended(
                   onPressed: () {},
-                  backgroundColor: const Color.fromARGB(255, 120, 85, 218),
+                  backgroundColor: const Color.fromARGB(255, 41, 98, 255),
                   label: const Text(
-                    'Login',
+                    'Log in',
                     style: TextStyle(
                       fontSize: 20,
                     ),

@@ -216,9 +216,9 @@ class _SignupPageState extends State<SignupPage> {
               width: double.infinity,
               child: FloatingActionButton.extended(
                   onPressed: () {},
-                  backgroundColor: const Color.fromARGB(255, 120, 85, 218),
+                  backgroundColor: const Color.fromARGB(255, 216, 57, 43),
                   label: const Text(
-                    'Register',
+                    'Sign Up',
                     style: TextStyle(
                       fontSize: 20,
                     ),
