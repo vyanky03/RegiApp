@@ -49,7 +49,12 @@ class _WelcomePageState extends State<WelcomePage> {
                       Navigator.of(context).pushNamed(LoginPage.routeName);
                     },
                     backgroundColor: const Color.fromARGB(255, 41, 98, 255),
-                    label: const Text('Log in')),
+                    label: const Text(
+                      'Log in',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    )),
               ),
               const SizedBox(
                 height: 30,
@@ -63,7 +68,12 @@ class _WelcomePageState extends State<WelcomePage> {
                       Navigator.of(context).pushNamed(SignupPage.routeName);
                     },
                     backgroundColor: const Color.fromARGB(255, 216, 57, 43),
-                    label: const Text('Sign Up')),
+                    label: const Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    )),
               )
             ],
           ),
