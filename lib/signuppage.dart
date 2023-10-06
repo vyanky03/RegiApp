@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:regiapp/loginpage.dart';
 
 class SignupPage extends StatefulWidget {
+  static const String routeName = '/signup';
   const SignupPage({super.key});
 
   @override
@@ -12,12 +14,12 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 120, 85, 218)),
-          child: const Icon(Icons.arrow_back_ios_new),
-        ),
+        // leading: ElevatedButton(
+        //   onPressed: () {},
+        //   style: ElevatedButton.styleFrom(
+        //       backgroundColor: const Color.fromARGB(255, 120, 85, 218)),
+        //   child: const Icon(Icons.arrow_back_ios_new),
+        // ),
         backgroundColor: const Color.fromARGB(255, 120, 85, 218),
         title: const Text('RegiApp',
             style: TextStyle(
@@ -45,22 +47,20 @@ class _SignupPageState extends State<SignupPage> {
             ),
             const Row(
               children: [
-                Column(
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.only(bottom: 8.0),
-                        child: SizedBox(
-                          width: 178,
+                Flexible(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             'First Name',
                             style: TextStyle(
                               fontSize: 18,
                             ),
-                          ),
-                        )),
-                    SizedBox(
-                      width: 181,
-                      child: TextField(
+                          )),
+                      TextField(
                         textCapitalization: TextCapitalization.words,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -70,18 +70,19 @@ class _SignupPageState extends State<SignupPage> {
                               vertical: 15, horizontal: 30),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: 10,
                 ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 8.0),
-                      child: SizedBox(
-                        width: 178,
+                Flexible(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 8.0),
                         child: Text(
                           'Last Name',
                           style: TextStyle(
@@ -89,10 +90,7 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 181,
-                      child: TextField(
+                      TextField(
                         textCapitalization: TextCapitalization.words,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -102,8 +100,8 @@ class _SignupPageState extends State<SignupPage> {
                               vertical: 15, horizontal: 30),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -215,6 +213,7 @@ class _SignupPageState extends State<SignupPage> {
             SizedBox(
               width: double.infinity,
               child: FloatingActionButton.extended(
+                  heroTag: const Key("h3"),
                   onPressed: () {},
                   backgroundColor: const Color.fromARGB(255, 216, 57, 43),
                   label: const Text(
@@ -231,19 +230,27 @@ class _SignupPageState extends State<SignupPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Already have an account? ',
+                  'Already have an account?',
                   style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(LoginPage.routeName);
+                  },
                   child: const Text(
-                    'Log in here',
+                    'Log in',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                ),
+                const Text(
+                  'here',
+                  style: TextStyle(
+                    fontSize: 16,
                   ),
                 )
               ],

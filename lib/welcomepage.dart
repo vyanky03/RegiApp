@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:regiapp/loginpage.dart';
+import 'package:regiapp/signuppage.dart';
 
 class WelcomePage extends StatefulWidget {
+  static const String routeName = '/';
   const WelcomePage({super.key});
 
   @override
@@ -41,7 +44,10 @@ class _WelcomePageState extends State<WelcomePage> {
                 width: 400,
                 height: 60,
                 child: FloatingActionButton.extended(
-                    onPressed: () {},
+                    heroTag: const Key("h2"),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(LoginPage.routeName);
+                    },
                     backgroundColor: const Color.fromARGB(255, 41, 98, 255),
                     label: const Text('Log in')),
               ),
@@ -52,7 +58,10 @@ class _WelcomePageState extends State<WelcomePage> {
                 width: 400,
                 height: 60,
                 child: FloatingActionButton.extended(
-                    onPressed: () {},
+                    heroTag: const Key("h1"),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(SignupPage.routeName);
+                    },
                     backgroundColor: const Color.fromARGB(255, 216, 57, 43),
                     label: const Text('Sign Up')),
               )

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:regiapp/signuppage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+  static const String routeName = '/login';
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -12,12 +14,12 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 120, 85, 218)),
-          child: const Icon(Icons.arrow_back_ios_new),
-        ),
+        // leading: ElevatedButton(
+        //   onPressed: () {},
+        //   style: ElevatedButton.styleFrom(
+        //       backgroundColor: const Color.fromARGB(255, 120, 85, 218)),
+        //   child: const Icon(Icons.arrow_back_ios_new),
+        // ),
         backgroundColor: const Color.fromARGB(255, 120, 85, 218),
         title: const Text('RegiApp',
             style: TextStyle(
@@ -83,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               width: double.infinity,
               child: FloatingActionButton.extended(
+                  heroTag: const Key("h4"),
                   onPressed: () {},
                   backgroundColor: const Color.fromARGB(255, 41, 98, 255),
                   label: const Text(
@@ -96,9 +99,11 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Already have an accont?'),
+                const Text("Don't have an accont?"),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(SignupPage.routeName);
+                    },
                     child: const Text(
                       'Sign Up',
                       style: TextStyle(fontWeight: FontWeight.bold),
