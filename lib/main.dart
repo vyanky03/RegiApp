@@ -1,18 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:regiapp/loginpage.dart';
 import 'package:regiapp/signuppage.dart';
 import 'package:regiapp/welcomepage.dart';
-// import 'package:regiapp/loginpage.dart';
-// import 'package:regiapp/signuppage.dart';
-
-// void main() {
-//   runApp(MaterialApp.router(
-//     debugShowCheckedModeBanner: false,
-//     routeInformationParser: MyRouter().router.routeInformationParser,
-//     routerDelegate: MyRouter().router.routerDelegate,
-//   ));
-// }
 
 void main() {
   runApp(MaterialApp(onGenerateRoute: (RouteSettings routeSettings) {
@@ -21,11 +10,11 @@ void main() {
         builder: (BuildContext context) {
           switch (routeSettings.name) {
             case WelcomePage.routeName:
-              return WelcomePage();
+              return const WelcomePage();
             case LoginPage.routeName:
-              return LoginPage();
+              return const LoginPage();
             case SignupPage.routeName:
-              return SignupPage();
+              return const SignupPage();
             default:
               return const WelcomePage();
           }
@@ -43,8 +32,6 @@ class RegForm extends StatefulWidget {
 class _RegFormState extends State<RegForm> {
   @override
   Widget build(BuildContext context) {
-    return WelcomePage();
-    // return LoginPage();
-    // return SignupPage();
+    return const WelcomePage();
   }
 }

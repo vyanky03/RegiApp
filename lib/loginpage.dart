@@ -14,12 +14,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: ElevatedButton(
-        //   onPressed: () {},
-        //   style: ElevatedButton.styleFrom(
-        //       backgroundColor: const Color.fromARGB(255, 120, 85, 218)),
-        //   child: const Icon(Icons.arrow_back_ios_new),
-        // ),
         backgroundColor: const Color.fromARGB(255, 120, 85, 218),
         title: const Text('RegiApp',
             style: TextStyle(
