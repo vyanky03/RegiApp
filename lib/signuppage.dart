@@ -17,10 +17,7 @@ class _SignupPageState extends State<SignupPage> {
         backgroundColor: const Color.fromARGB(255, 120, 85, 218),
         title: const Text('RegiApp',
             style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1,
-                fontFamily: 'Exo2')),
+                fontSize: 24, fontWeight: FontWeight.bold, letterSpacing: 1)),
         centerTitle: true,
       ),
       body: Padding(
@@ -29,7 +26,7 @@ class _SignupPageState extends State<SignupPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Text(
-              'Sign up',
+              'Reegister Here!',
               style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
@@ -214,6 +211,7 @@ class _SignupPageState extends State<SignupPage> {
                     'Sign Up',
                     style: TextStyle(
                       fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   )),
             ),

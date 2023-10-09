@@ -53,6 +53,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       'Log in',
                       style: TextStyle(
                         fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                     )),
               ),
@@ -72,6 +73,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       'Sign Up',
                       style: TextStyle(
                         fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                     )),
               )
