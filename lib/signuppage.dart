@@ -65,13 +65,15 @@ class _SignupPageState extends State<SignupPage> {
                           TextField(
                             textCapitalization: TextCapitalization.words,
                             decoration: InputDecoration(
+                              prefixIcon: const Icon(
+                                Icons.person,
+                                size: 18,
+                              ),
                               border: const OutlineInputBorder(),
                               hintText: 'Enter First Name',
                               hintStyle: const TextStyle(fontSize: 14),
                               errorText:
                                   _validate ? 'Please Enter First Name' : null,
-                              contentPadding: const EdgeInsets.symmetric(
-                                  vertical: 15, horizontal: 30),
                             ),
                           ),
                         ],
@@ -97,13 +99,15 @@ class _SignupPageState extends State<SignupPage> {
                           TextField(
                             textCapitalization: TextCapitalization.words,
                             decoration: InputDecoration(
+                              prefixIcon: const Icon(
+                                Icons.person,
+                                size: 18,
+                              ),
                               border: const OutlineInputBorder(),
                               hintText: 'Enter Last Name',
                               hintStyle: const TextStyle(fontSize: 14),
                               errorText:
                                   _validate ? 'Please Enter Last Name' : null,
-                              contentPadding: const EdgeInsets.symmetric(
-                                  vertical: 15, horizontal: 30),
                             ),
                           ),
                         ],
@@ -130,12 +134,14 @@ class _SignupPageState extends State<SignupPage> {
                 TextFormField(
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(
+                      Icons.mail,
+                      size: 18,
+                    ),
                     border: const OutlineInputBorder(),
                     hintText: 'Enter E-mail',
                     hintStyle: const TextStyle(fontSize: 14),
                     errorText: _validate ? 'Please Enter E-mail' : null,
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 30),
                   ),
                 ),
                 const SizedBox(
@@ -157,12 +163,14 @@ class _SignupPageState extends State<SignupPage> {
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(
+                      Icons.numbers,
+                      size: 18,
+                    ),
                     border: const OutlineInputBorder(),
                     hintText: 'Enter Mobile Number',
                     hintStyle: const TextStyle(fontSize: 14),
                     errorText: _validate ? 'Please Enter Mobile Number' : null,
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 30),
                   ),
                 ),
                 const SizedBox(
@@ -183,12 +191,14 @@ class _SignupPageState extends State<SignupPage> {
                 TextFormField(
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(
+                      Icons.password,
+                      size: 18,
+                    ),
                     border: const OutlineInputBorder(),
                     hintText: 'Enter Password',
                     hintStyle: const TextStyle(fontSize: 14),
                     errorText: _validate ? 'Please Enter Password' : null,
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 30),
                   ),
                 ),
                 const SizedBox(
@@ -209,12 +219,14 @@ class _SignupPageState extends State<SignupPage> {
                 TextFormField(
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(
+                      Icons.password,
+                      size: 18,
+                    ),
                     border: const OutlineInputBorder(),
                     hintText: 'Confirm Password',
                     hintStyle: const TextStyle(fontSize: 14),
                     errorText: _validate ? 'Please Confirm the Password' : null,
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 30),
                   ),
                 ),
                 const SizedBox(

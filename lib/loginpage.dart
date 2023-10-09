@@ -61,9 +61,13 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 textCapitalization: TextCapitalization.words,
                 decoration: InputDecoration(
+                  prefixIcon: const Icon(
+                    Icons.person,
+                    size: 18,
+                  ),
                   border: const OutlineInputBorder(),
                   hintText: 'Enter Login ID',
-                  hintStyle: const TextStyle(fontSize: 16),
+                  hintStyle: const TextStyle(fontSize: 14),
                   errorText: _validate ? 'ID Can\'t Be Empty' : null,
                 ),
               ),
@@ -80,9 +84,13 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 textCapitalization: TextCapitalization.words,
                 decoration: InputDecoration(
+                  prefixIcon: const Icon(
+                    Icons.password,
+                    size: 18,
+                  ),
                   border: const OutlineInputBorder(),
                   hintText: 'Enter Password',
-                  hintStyle: const TextStyle(fontSize: 16),
+                  hintStyle: const TextStyle(fontSize: 14),
                   errorText: _validate ? 'Password Can\'t Be Empty' : null,
                 ),
               ),
