@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:regexed_validator/regexed_validator.dart';
 import 'package:regiapp/signuppage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,6 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final GlobalKey<FormState> _formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +28,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(10, 10, 10, 8),
         child: Form(
+          key: _formKey,
           child: Center(
             child: SingleChildScrollView(
               child: Column(
@@ -53,6 +56,12 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const Padding(padding: EdgeInsets.only(bottom: 10)),
                     TextFormField(
+                      validator: (value) {
+                        if (value == null || !validator.email(value)) {
+                          return 'Please enter a valid ID';
+                        }
+                        return null;
+                      },
                       textCapitalization: TextCapitalization.words,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(
@@ -75,6 +84,12 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const Padding(padding: EdgeInsets.only(bottom: 10)),
                     TextFormField(
+                      validator: (value) {
+                        if (value == null || !validator.password(value)) {
+                          return 'Please enter a valid password';
+                        }
+                        return null;
+                      },
                       textCapitalization: TextCapitalization.words,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(
@@ -92,7 +107,14 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: FloatingActionButton.extended(
                           heroTag: const Key("h4"),
-                          onPressed: () {},
+                          onPressed: () {
+                            final form = _formKey.currentState!;
+                            if (form.validate()) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Logging in...')));
+                            }
+                          },
                           backgroundColor:
                               const Color.fromARGB(255, 41, 98, 255),
                           label: const Text(
