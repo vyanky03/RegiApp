@@ -12,7 +12,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _text = TextEditingController();
   bool _validate = false;
-
   @override
   void dispose() {
     _text.dispose();
