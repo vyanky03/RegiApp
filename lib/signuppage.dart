@@ -56,7 +56,7 @@ class _SignupPageState extends State<SignupPage> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(bottom: 8.0),
-                            child: textstyle(text: 'Last Name'),
+                            child: textstyle(text: 'First Name'),
                           ),
                           fieldstyle(
                               htext: 'Enter First Name',
@@ -115,7 +115,8 @@ class _SignupPageState extends State<SignupPage> {
                 fieldstyle(
                     htext: 'Enter Mobile Number',
                     etext: 'Please Enter Mobile Number',
-                    picon: const Icon(Icons.phone_android)),
+                    picon: const Icon(Icons.phone_android),
+                    kType: TextInputType.number),
                 const SizedBox(
                   height: 10,
                 ),
@@ -135,9 +136,10 @@ class _SignupPageState extends State<SignupPage> {
                   height: 10,
                 ),
                 fieldstyle(
-                    htext: 'Confirm Password',
-                    etext: 'Please Confirm Password',
-                    picon: const Icon(Icons.password)),
+                  htext: 'Confirm Password',
+                  etext: 'Please Confirm Password',
+                  picon: const Icon(Icons.password),
+                ),
                 const SizedBox(
                   height: 15,
                 ),
@@ -265,9 +267,10 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 
-  Widget fieldstyle({htext, etext, picon}) {
+  Widget fieldstyle({htext, etext, picon, kType}) {
     return TextFormField(
       textCapitalization: TextCapitalization.words,
+      keyboardType: kType,
       decoration: InputDecoration(
         prefixIcon: picon,
         border: const OutlineInputBorder(),
