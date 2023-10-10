@@ -54,28 +54,14 @@ class _SignupPageState extends State<SignupPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text(
-                                'First Name',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                ),
-                              )),
-                          TextField(
-                            textCapitalization: TextCapitalization.words,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(
-                                Icons.person,
-                                size: 18,
-                              ),
-                              border: const OutlineInputBorder(),
-                              hintText: 'Enter First Name',
-                              hintStyle: const TextStyle(fontSize: 14),
-                              errorText:
-                                  _validate ? 'Please Enter First Name' : null,
-                            ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: textstyle(text: 'Last Name'),
                           ),
+                          fieldstyle(
+                              htext: 'Enter First Name',
+                              etext: 'Please Enter First Name',
+                              picon: const Icon(Icons.person)),
                         ],
                       ),
                     ),
@@ -87,29 +73,14 @@ class _SignupPageState extends State<SignupPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.only(bottom: 8.0),
-                            child: Text(
-                              'Last Name',
-                              style: TextStyle(
-                                fontSize: 18,
-                              ),
-                            ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: textstyle(text: 'Last Name'),
                           ),
-                          TextField(
-                            textCapitalization: TextCapitalization.words,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(
-                                Icons.person,
-                                size: 18,
-                              ),
-                              border: const OutlineInputBorder(),
-                              hintText: 'Enter Last Name',
-                              hintStyle: const TextStyle(fontSize: 14),
-                              errorText:
-                                  _validate ? 'Please Enter Last Name' : null,
-                            ),
-                          ),
+                          fieldstyle(
+                              htext: 'Enter Last Name',
+                              etext: 'Please Enter Last Name',
+                              picon: const Icon(Icons.person)),
                         ],
                       ),
                     ),
@@ -118,117 +89,55 @@ class _SignupPageState extends State<SignupPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Row(
+                Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(bottom: 8.0),
-                      child: Text(
-                        'E-mail',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: textstyle(text: 'E-mail'),
                     ),
                   ],
                 ),
-                TextFormField(
-                  textCapitalization: TextCapitalization.words,
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(
-                      Icons.mail,
-                      size: 18,
-                    ),
-                    border: const OutlineInputBorder(),
-                    hintText: 'Enter E-mail',
-                    hintStyle: const TextStyle(fontSize: 14),
-                    errorText: _validate ? 'Please Enter E-mail' : null,
-                  ),
-                ),
+                fieldstyle(
+                    htext: 'Enter E-mail',
+                    etext: 'Please Enter E-mail',
+                    picon: const Icon(Icons.mail)),
                 const SizedBox(
                   height: 10,
                 ),
-                const Row(
+                Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(bottom: 8.0),
-                      child: Text(
-                        'Mobile Number',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: textstyle(text: 'Mobile Number'),
                     ),
                   ],
                 ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(
-                      Icons.numbers,
-                      size: 18,
-                    ),
-                    border: const OutlineInputBorder(),
-                    hintText: 'Enter Mobile Number',
-                    hintStyle: const TextStyle(fontSize: 14),
-                    errorText: _validate ? 'Please Enter Mobile Number' : null,
-                  ),
-                ),
+                fieldstyle(
+                    htext: 'Enter Mobile Number',
+                    etext: 'Please Enter Mobile Number',
+                    picon: const Icon(Icons.phone_android)),
                 const SizedBox(
                   height: 10,
                 ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Password',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
+                textstyle(text: 'Password'),
                 const SizedBox(
                   height: 10,
                 ),
-                TextFormField(
-                  textCapitalization: TextCapitalization.words,
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(
-                      Icons.password,
-                      size: 18,
-                    ),
-                    border: const OutlineInputBorder(),
-                    hintText: 'Enter Password',
-                    hintStyle: const TextStyle(fontSize: 14),
-                    errorText: _validate ? 'Please Enter Password' : null,
-                  ),
-                ),
+                fieldstyle(
+                    htext: 'Enter Password',
+                    etext: 'Please Enter Password',
+                    picon: const Icon(Icons.password)),
                 const SizedBox(
                   height: 10,
                 ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Confirm password',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
+                textstyle(text: 'Confirm Password'),
                 const SizedBox(
                   height: 10,
                 ),
-                TextFormField(
-                  textCapitalization: TextCapitalization.words,
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(
-                      Icons.password,
-                      size: 18,
-                    ),
-                    border: const OutlineInputBorder(),
-                    hintText: 'Confirm Password',
-                    hintStyle: const TextStyle(fontSize: 14),
-                    errorText: _validate ? 'Please Confirm the Password' : null,
-                  ),
-                ),
+                fieldstyle(
+                    htext: 'Confirm Password',
+                    etext: 'Please Confirm Password',
+                    picon: const Icon(Icons.password)),
                 const SizedBox(
                   height: 15,
                 ),
@@ -340,6 +249,31 @@ class _SignupPageState extends State<SignupPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget textstyle({text}) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 18,
+        ),
+      ),
+    );
+  }
+
+  Widget fieldstyle({htext, etext, picon}) {
+    return TextFormField(
+      textCapitalization: TextCapitalization.words,
+      decoration: InputDecoration(
+        prefixIcon: picon,
+        border: const OutlineInputBorder(),
+        hintText: htext,
+        hintStyle: const TextStyle(fontSize: 14),
+        errorText: _validate ? etext : null,
       ),
     );
   }
