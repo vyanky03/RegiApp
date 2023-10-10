@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:regexed_validator/regexed_validator.dart';
 import 'package:regiapp/loginpage.dart';
 
 class SignupPage extends StatefulWidget {
@@ -47,7 +48,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const Text('Create an account here!'),
                   const SizedBox(
-                    height: 40,
+                    height: 30,
                   ),
                   Row(
                     children: [
@@ -58,35 +59,23 @@ class _SignupPageState extends State<SignupPage> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(bottom: 8.0),
-                              child: textstyle(text: 'First Name'),
+                              child: textstyle(text: 'Full Name'),
                             ),
-                            fieldstyle(
-                                htext: 'Enter First Name',
-                                etext: 'Please Enter First Name',
-                                picon: const Icon(Icons.person),
-                                rexp:
-                                    r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$"),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Flexible(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
-                              child: textstyle(text: 'Last Name'),
+                            TextFormField(
+                              validator: (value) {
+                                if (value == null || !validator.name(value)) {
+                                  return 'Please enter a valid name';
+                                }
+                                return null;
+                              },
+                              textCapitalization: TextCapitalization.words,
+                              decoration: const InputDecoration(
+                                prefixIcon: Icon(Icons.person),
+                                border: OutlineInputBorder(),
+                                hintText: 'Enter Full Name',
+                                hintStyle: TextStyle(fontSize: 14),
+                              ),
                             ),
-                            fieldstyle(
-                                htext: 'Enter Last Name',
-                                etext: 'Please Enter Last Name',
-                                picon: const Icon(Icons.person),
-                                rexp:
-                                    r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$"),
                           ],
                         ),
                       ),
@@ -103,11 +92,21 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                     ],
                   ),
-                  fieldstyle(
-                      htext: 'Enter E-mail',
-                      etext: 'Please Enter E-mail',
-                      picon: const Icon(Icons.mail),
-                      rexp: r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+"),
+                  TextFormField(
+                    validator: (value) {
+                      if (value == null || !validator.email(value)) {
+                        return 'Please enter a valid email';
+                      }
+                      return null;
+                    },
+                    textCapitalization: TextCapitalization.words,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.email),
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter E-mail',
+                      hintStyle: TextStyle(fontSize: 14),
+                    ),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -119,12 +118,22 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                     ],
                   ),
-                  fieldstyle(
-                      htext: 'Enter Mobile Number',
-                      etext: 'Please Enter Mobile Number',
-                      picon: const Icon(Icons.phone_android),
-                      kType: TextInputType.number,
-                      rexp: r"^\+?0[0-9]{10}$"),
+                  TextFormField(
+                    validator: (value) {
+                      if (value == null || !validator.phone(value)) {
+                        return 'Please enter a valid number';
+                      }
+                      return null;
+                    },
+                    textCapitalization: TextCapitalization.words,
+                    keyboardType: TextInputType.phone,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.phone),
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter Mobile Number',
+                      hintStyle: TextStyle(fontSize: 14),
+                    ),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -132,12 +141,23 @@ class _SignupPageState extends State<SignupPage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  fieldstyle(
-                      htext: 'Enter Password',
-                      etext: 'Please Enter Password',
-                      picon: const Icon(Icons.password),
-                      rexp:
-                          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\><*~]).{8,}/pre>'),
+                  TextFormField(
+                    validator: (value) {
+                      if (value == null || !validator.password(value)) {
+                        return 'Please enter a valid password';
+                      }
+                      return null;
+                    },
+                    textCapitalization: TextCapitalization.words,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.password),
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter Password',
+                      hintStyle: TextStyle(fontSize: 14),
+                      helperText:
+                          'Password should be 8 char long and must have one special character',
+                    ),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -145,10 +165,14 @@ class _SignupPageState extends State<SignupPage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  fieldstyle(
-                    htext: 'Confirm Password',
-                    etext: 'Please Confirm Password',
-                    picon: const Icon(Icons.password),
+                  TextFormField(
+                    textCapitalization: TextCapitalization.words,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.password),
+                      border: OutlineInputBorder(),
+                      hintText: 'Confirm Password',
+                      hintStyle: TextStyle(fontSize: 14),
+                    ),
                   ),
                   const SizedBox(
                     height: 15,
@@ -275,26 +299,6 @@ class _SignupPageState extends State<SignupPage> {
         style: const TextStyle(
           fontSize: 18,
         ),
-      ),
-    );
-  }
-
-  Widget fieldstyle({htext, etext, picon, kType, rexp}) {
-    return TextFormField(
-      validator: (value) {
-        if (value!.isEmpty) {
-          return 'Please enter correctly';
-        } else {
-          return null;
-        }
-      },
-      textCapitalization: TextCapitalization.words,
-      keyboardType: kType,
-      decoration: InputDecoration(
-        prefixIcon: picon,
-        border: const OutlineInputBorder(),
-        hintText: htext,
-        hintStyle: const TextStyle(fontSize: 14),
       ),
     );
   }
