@@ -5,6 +5,7 @@ import 'package:regiapp/welcomepage.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     onGenerateRoute: (RouteSettings routeSettings) {
       return MaterialPageRoute<void>(
           settings: routeSettings,

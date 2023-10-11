@@ -1,6 +1,11 @@
+// ignore_for_file: avoid_print
+
+import 'dart:convert';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:regexed_validator/regexed_validator.dart';
 import 'package:regiapp/loginpage.dart';
+import 'package:http/http.dart' as http;
 
 class SignupPage extends StatefulWidget {
   static const String routeName = '/signup';
@@ -12,6 +17,42 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
+  TextEditingController fullname = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController number = TextEditingController();
+  TextEditingController password = TextEditingController();
+
+  Future<void> insertrecord() async {
+    if (fullname.text != '' ||
+        email.text != '' ||
+        number.text != '' ||
+        password.text != '') {
+      try {
+        String uri = "http://192.168.1.28:8080/regiapp_api/insertdata.php";
+        var res = await http.post(Uri.parse(uri), body: {
+          "fullname": fullname.text,
+          "email": email.text,
+          "number": number.text,
+          "password": password.text,
+        });
+
+        var response = jsonDecode(res.body);
+        if (response["success"] == "true") {
+          print("Record Inserted");
+          fullname.text = "";
+          email.text = "";
+          number.text = "";
+          password.text = "";
+        } else {
+          print("some issue");
+        }
+      } catch (e) {
+        print(e);
+      }
+    } else {
+      print('please fill all field');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +96,7 @@ class _SignupPageState extends State<SignupPage> {
                               child: textstyle(text: 'Full Name'),
                             ),
                             TextFormField(
+                              controller: fullname,
                               validator: (value) {
                                 if (value == null || !validator.name(value)) {
                                   return 'Please enter a valid name';
@@ -86,13 +128,13 @@ class _SignupPageState extends State<SignupPage> {
                     ],
                   ),
                   TextFormField(
+                    controller: email,
                     validator: (value) {
                       if (value == null || !validator.email(value)) {
                         return 'Please enter a valid email';
                       }
                       return null;
                     },
-                    textCapitalization: TextCapitalization.words,
                     decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.email),
                       border: OutlineInputBorder(),
@@ -112,6 +154,7 @@ class _SignupPageState extends State<SignupPage> {
                     ],
                   ),
                   TextFormField(
+                    controller: number,
                     validator: (value) {
                       if (value == null || !validator.phone(value)) {
                         return 'Please enter a valid number';
@@ -135,6 +178,7 @@ class _SignupPageState extends State<SignupPage> {
                     height: 10,
                   ),
                   TextFormField(
+                    controller: password,
                     validator: (value) {
                       if (value == null || !validator.password(value)) {
                         return 'Please enter a valid password';
@@ -181,6 +225,7 @@ class _SignupPageState extends State<SignupPage> {
                                 const SnackBar(
                                     content: Text('Processing Data...')));
                           }
+                          insertrecord();
                         },
                         backgroundColor: const Color.fromARGB(255, 216, 57, 43),
                         label: const Text(
