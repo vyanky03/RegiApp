@@ -28,7 +28,7 @@ class _SignupPageState extends State<SignupPage> {
         number.text != '' ||
         password.text != '') {
       try {
-        String uri = "http://192.168.1.28:8080/regiapp_api/insertdata.php";
+        String uri = "http://192.168.168.4:8080/regiapp_api/insertdata.php";
         var res = await http.post(Uri.parse(uri), body: {
           "fullname": fullname.text,
           "email": email.text,
