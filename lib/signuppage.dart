@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -38,19 +36,19 @@ class _SignupPageState extends State<SignupPage> {
 
         var response = jsonDecode(res.body);
         if (response["success"] == "true") {
-          print("Record Inserted");
+          // print("Record Inserted");
           fullname.text = "";
           email.text = "";
           number.text = "";
           password.text = "";
         } else {
-          print("some issue");
+          // print("some issue");
         }
       } catch (e) {
-        print(e);
+        // print(e);
       }
     } else {
-      print('please fill all field');
+      // print('please fill all field');
     }
   }
 
@@ -65,7 +63,7 @@ class _SignupPageState extends State<SignupPage> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 8),
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
         child: Form(
           key: _formKey,
           child: Center(
@@ -74,7 +72,7 @@ class _SignupPageState extends State<SignupPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   const Text(
-                    'Reegister Here!',
+                    'Register Here!',
                     style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
@@ -269,7 +267,7 @@ class _SignupPageState extends State<SignupPage> {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Row(
                     children: [
@@ -277,7 +275,7 @@ class _SignupPageState extends State<SignupPage> {
                           child: Container(
                         margin: const EdgeInsets.only(right: 10.0),
                         child: const Divider(
-                          height: 40,
+                          height: 10,
                           thickness: 1,
                           color: Colors.black,
                         ),
@@ -290,7 +288,7 @@ class _SignupPageState extends State<SignupPage> {
                           child: Container(
                         margin: const EdgeInsets.only(left: 10.0),
                         child: const Divider(
-                          height: 40,
+                          height: 10,
                           thickness: 1,
                           color: Colors.black,
                         ),
@@ -298,28 +296,140 @@ class _SignupPageState extends State<SignupPage> {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Image.asset(
-                      'images/fb.png',
-                      height: 50,
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Image.asset(
-                      'images/google.png',
-                      height: 50,
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Image.asset(
-                      'images/twitter.png',
-                      height: 50,
-                    ),
-                  ]),
+                  Column(
+                    children: [
+                      MaterialButton(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(40))),
+                        height: 50,
+                        onPressed: () {},
+                        color: const Color.fromARGB(255, 24, 119, 242),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 25.0,
+                              width: 25.0,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('images/fb_new.webp'),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            const Text(
+                              "Sign In with Facebook",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Color.fromARGB(255, 255, 255, 255)),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Column(
+                    children: [
+                      MaterialButton(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(40))),
+                        height: 50,
+                        onPressed: () {},
+                        color: const Color.fromARGB(255, 29, 161, 242),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 40.0,
+                              width: 40.0,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('images/twitter_new.png'),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            const Text(
+                              "Sign In with Twitter",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                  color: Color.fromARGB(255, 255, 255, 255)),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Column(
+                    children: [
+                      MaterialButton(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(40))),
+                        onPressed: () {},
+                        height: 50,
+                        color: const Color.fromARGB(255, 170, 36, 36),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 50.0,
+                              width: 50.0,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('images/google_new.jpg'),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            const Text(
+                              "Sign In with Google",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  // Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  //   Image.asset(
+                  //     'images/fb.png',
+                  //     height: 50,
+                  //   ),
+                  //   const SizedBox(
+                  //     width: 20,
+                  //   ),
+                  //   Image.asset(
+                  //     'images/google.png',
+                  //     height: 50,
+                  //   ),
+                  //   const SizedBox(
+                  //     width: 20,
+                  //   ),
+                  //   Image.asset(
+                  //     'images/twitter.png',
+                  //     height: 50,
+                  //   ),
+                  // ]),
                 ],
               ),
             ),
