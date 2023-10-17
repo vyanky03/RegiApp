@@ -410,26 +410,6 @@ class _SignupPageState extends State<SignupPage> {
                   const SizedBox(
                     height: 15,
                   ),
-                  // Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  //   Image.asset(
-                  //     'images/fb.png',
-                  //     height: 50,
-                  //   ),
-                  //   const SizedBox(
-                  //     width: 20,
-                  //   ),
-                  //   Image.asset(
-                  //     'images/google.png',
-                  //     height: 50,
-                  //   ),
-                  //   const SizedBox(
-                  //     width: 20,
-                  //   ),
-                  //   Image.asset(
-                  //     'images/twitter.png',
-                  //     height: 50,
-                  //   ),
-                  // ]),
                 ],
               ),
             ),
