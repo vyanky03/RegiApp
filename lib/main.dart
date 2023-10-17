@@ -6,6 +6,7 @@ import 'package:regiapp/welcomepage.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
+    theme: ThemeData(fontFamily: 'Exo2'),
     onGenerateRoute: (RouteSettings routeSettings) {
       return MaterialPageRoute<void>(
           settings: routeSettings,
@@ -22,7 +23,6 @@ void main() {
             }
           });
     },
-    theme: ThemeData(fontFamily: 'Exo2'),
   ));
 }
 
