@@ -41,15 +41,11 @@ class _SignupPageState extends State<SignupPage> {
           email.text = "";
           number.text = "";
           password.text = "";
-        } else {
-          // print("some issue");
-        }
+        } else {}
       } catch (e) {
         // print(e);
       }
-    } else {
-      // print('please fill all field');
-    }
+    } else {}
   }
 
   @override
@@ -229,6 +225,7 @@ class _SignupPageState extends State<SignupPage> {
                         label: const Text(
                           'Sign Up',
                           style: TextStyle(
+                            color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),

@@ -52,6 +52,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     label: const Text(
                       'Log in',
                       style: TextStyle(
+                        color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -73,6 +74,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       'Sign Up',
                       style: TextStyle(
                         fontSize: 20,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     )),

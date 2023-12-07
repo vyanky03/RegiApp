@@ -120,6 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                           label: const Text(
                             'Log in',
                             style: TextStyle(
+                              color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
